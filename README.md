@@ -50,6 +50,18 @@ outputs = drunk_model.generate(input_ids, max_new_tokens=50)
 print(tokenizer.decode(outputs[0]))
 ```
 
+### 💬 CLI チャットモード
+
+対話的に酔っ払い AI と会話できるスクリプトも同梱しています。
+
+```bash
+# デフォルト設定で開始
+./venv/bin/python examples/drunk_chat_cli.py
+
+# モデルと酔い度を指定して開始
+./venv/bin/python examples/drunk_chat_cli.py --model "your-model-path" --level 0.8
+```
+
 ## 🛠️ 技術的な背景
 
 人間の酔いが、脳の「大脳新皮質（理性）」の活動低下により「大脳辺縁系（本能）」が優位になる現象であるのと同様に、本ライブラリでは LLM の上位推論レイヤーやアライメント層の影響を排除し、事前学習で得られた生の単語確率を前面に出すように設計されています。
